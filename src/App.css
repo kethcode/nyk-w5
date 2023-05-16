@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Roboto+Mono&family=Share+Tech+Mono&display=swap");
+
+@font-face {
+  font-family: "sv_basic_manualbook";
+  src: url("../public/svbasicmanual-webfont.woff2") format("woff2"),
+    url("../public/svbasicmanual-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --main-bg-color: #000;
+  --main-text-color: #fff;
+  --terminal-bg-color: #111;
+  --terminal-border-color: #444;
+  --terminal-text-color: #fff;
+  --terminal-placeholder-color: #5c6770;
+  --terminal-padding: 10px;
+  /* --terminal-width: 656px; */
+
+  --font-size: 0.9rem;
+
+  --terminal-max-width: 100%;
+  --border-radius: 10px;
+
+  --chisel-green: #59b33c;
+  --chisel-yellow: #dfce65;
+  --chisel-cyan: #6bd1c7;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  height: 100vh;
+  background: var(--main-bg-color);
+  background: radial-gradient(
+    circle at 24.1% 68.8%,
+    rgb(50, 50, 50) 0%,
+    rgb(0, 0, 0) 99.4%
+  );
+  background-attachment: fixed;
+  font-family: "Roboto Mono", monospace;
+  font-size: var(--font-size);
+}
+
+body {
+  margin: 0 auto;
+  color: var(--main-text-color);
+}
+
+div#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+/* .header-left {
+  flex: 1;
+  justify-content: right;
+}
+
+.header-left-img {
+  height: auto;
+  width: auto;
+  max-width: 96px;
+  max-height: 96px;
+  margin-left: 48px;
+  margin-top: 16px;
+  filter: drop-shadow(0px 0px 12px rgba(49, 164, 160, 0.5));
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-right {
+  flex: 1;
+  text-align: right;
+} */
+
+h1 {
+  font-family: "sv_basic_manualbook";
+  margin-bottom: -10px;
+  font-size: 2.5rem;
+  color: var(--main-text-color);
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px rgb(0 172 165),
+    0 0 42px rgb(21, 227, 221), 0 0 82px rgb(21, 227, 221);
+}
+
+h2 {
+  margin: 5px 0;
+}
+
+h3 {
+  margin: 10px;
+}
+
+h5 {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 2rem;
+  margin: 0;
+  margin-left: 5rem;
+  transform: rotate(-10deg);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 50px;
+}
+
+.main .columns {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.main .columns .col.left {
+  width: 200px;
+  order: 1;
+}
+
+.main .columns .col.center {
+  flex: 1;
+  order: 2;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0;
+}
+
+.main .columns .col.right {
+  width: 655px;
+  order: 3;
+}
+
+.main .box {
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  border-radius: var(--border-radius);
+  padding: var(--terminal-padding);
+  color: var(--terminal-text-color);
+  width: var(--terminal-width);
+  max-width: var(--terminal-max-width);
+  margin-bottom: 16px;
+  font-size: var(--font-size);
+  text-align: left;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.main .hint,
+.main .hint-detail,
+.main div {
+  word-break: break-all;
+}
+
+.answer-box {
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  border-radius: var(--border-radius);
+  padding: var(--terminal-padding);
+  color: var(--terminal-text-color);
+  width: var(--terminal-width);
+  max-width: var(--terminal-max-width);
+  margin: 24px;
+  font-size: var(--font-size);
+  text-align: left;
+  white-space: pre-line;
+}
+
+.textarea-terminal {
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: var(--terminal-padding);
+  color: var(--terminal-text-color);
+  width: 100%;
+  max-width: var(--terminal-max-width);
+  height: 6rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: var(--font-size);
+}
+
+.textarea-terminal::placeholder {
+  color: var(--terminal-placeholder-color);
+}
+
+.tx-params {
+  margin: 16px;
+  width: var(--terminal-width);
+  max-width: var(--terminal-max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.tx-params input {
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  font-family: "Roboto Mono", monospace;
+  width: calc(50% - 8px);
+  padding: var(--terminal-padding);
+  color: var(--terminal-text-color);
+}
+
+.tx-params input::placeholder {
+  color: var(--terminal-placeholder-color);
+}
+
+.tx-params-input-left {
+  border-radius: 0 0 0 var(--border-radius);
+}
+
+.tx-params-input-right {
+  border-radius: 0 0 var(--border-radius) 0;
+}
+
+/* .button-waiting {
+  cursor: pointer;
+  margin-top: 16px;
+
+  border: 0.2rem solid var(--main-text-color);
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--main-text-color);
+  font-family: "Share Tech Mono", monospace;
+} */
+
+.button-waiting {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  margin-top: -2px;
+  border: 1px solid var(--terminal-border-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 4px var(--terminal-padding) 3px;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  background: #212121;
+  color: #777;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* .button-waiting.off {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.button-waiting.on {
+  opacity: 0.7;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #33ff99,
+    0 0 0.8rem #33ffcc, inset 0 0 1.3rem #00ff66;
+  transition: all ease 0.5s;
+} */
+
+/* .button-waiting.on:hover {
+  opacity: 1;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #00ff66, 0 0 0.8rem #00ff66, 0 0 2.8rem #33ffcc, inset 0 0 1.3rem #00ff66
+}  */
+/* 
+.button-execute {
+  cursor: pointer;
+  margin-top: 16px;
+
+  border: 0.2rem solid var(--main-text-color);
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--main-text-color);
+  font-family: "Share Tech Mono", monospace;
+} */
+
+.button-execute {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  margin-top: -2px;
+  border: 1px solid var(--terminal-border-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 4px var(--terminal-padding) 3px;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  background: #212121;
+  color: #fff;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* .button-execute.off {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.button-execute.on {
+  opacity: 0.7;
+  opacity: 1;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0066,
+    0 0 0.8rem #ff0066, 0 0 2.8rem #ff33cc, inset 0 0 1.3rem #ff0066;
+}
+
+.button-execute.on:hover {
+  opacity: 1;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0066, 0 0 0.8rem #ff0066, 0 0 2.8rem #ff33cc, inset 0 0 1.3rem #ff0066
+}  */
+
+.button-puzzle-select{
+  cursor: pointer;
+  margin-bottom: 16px;
+  width: 180px;
+  border: 0.2rem solid var(--main-text-color);
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--main-text-color);
+  transition: all ease 0.5s;
+  font-family: "Share Tech Mono", monospace;
+  opacity: 0.7;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #056758, 0 0 0.8rem #159c7a, inset 0 0 1.3rem #03b39c;
+}
+
+.button-puzzle-select:hover{
+  animation: flicker 2s forwards;
+  opacity: 1;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #25ffde,
+    0 0 0.8rem #33ffcc, inset 0 0 1.3rem #00ffdd;
+}
+
+.button-puzzle-select.active{
+  opacity: 1;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0066, 0 0 0.8rem #ff0066, 0 0 2.8rem #ff33cc, inset 0 0 1.3rem #ff0066;
+}
+
+.results {
+  margin-top: 50px;
+}
+
+.container-terminal {
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  border-radius: var(--border-radius);
+  padding: var(--terminal-padding);
+  text-align: left;
+  width: var(--terminal-width);
+  max-width: var(--terminal-max-width);
+  overflow-wrap: break-word;
+}
+
+.container-terminal.top {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+.container-terminal.bottom {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  margin-top: 16px;
+}
+
+.container-terminal h3 {
+  font-size: 13px;
+  margin-bottom: 0;
+  color: var(--chisel-green);
+}
+
+.container-terminal p {
+  font-size: 13px;
+  margin-top: 0;
+}
+
+.container-terminal ul {
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+}
+
+.container-terminal li {
+  font-size: 13px;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+}
+
+.chisel-green {
+  color: var(--chisel-green);
+}
+.chisel-yellow {
+  color: var(--chisel-yellow);
+}
+.chisel-cyan {
+  color: var(--chisel-cyan);
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+  background: var(--terminal-bg-color);
+  border: 1px solid var(--terminal-border-color);
+  border-radius: var(--border-radius);
+  padding: var(--terminal-padding);
+  color: var(--terminal-text-color);
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 16px;
+}
+
+footer a,
+.col.left a {
+  color: var(--main-text-color);
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding: 0;
+  word-break: break-all;
+  opacity: 0.5;
+  transition: all ease 0.2s;
+
+  font-size: var(--font-size);
+}
+
+footer a:hover {
+  animation: flicker 2s forwards;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    filter: drop-shadow(0px 0px 12px rgb(21, 227, 221));
+    opacity: 1;
+  }
+  15%,
+  20%,
+  24% {
+    filter: none;
+    opacity: 0.3;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main .columns{display: contents;}
+  .col{
+    width: 100%!important;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .button-puzzle-select{
+    margin:0 8px 16px 8px;
+  }
+  .main .columns .col.center{padding: 0;}
+
+}
